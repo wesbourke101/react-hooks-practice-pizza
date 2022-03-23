@@ -1,15 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 
-function PizzaForm() {
+function PizzaForm({clickedInfo}) {
+  //console.log(clickedInfo.topping)
+  //const [id, topping, size, vegetarian] = clickedInfo
+  const[textInput, setTextInput] = useState('')
+  
+
+
   return (
     <form onSubmit={null /*handle that submit*/}>
       <div className="form-row">
         <div className="col-5">
           <input
+            onClick={(event) => setTextInput(event.target.textInput)}
             className="form-control"
             type="text"
             name="topping"
-            placeholder="Pizza Topping"
+            placeholder="nothing"
           />
         </div>
         <div className="col">
